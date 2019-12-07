@@ -30,18 +30,28 @@ input {
      transition-duration: 2s;
  }
 
-input:checked  ~  .container-bar .bar:first-child {
+input:checked  ~ .bar:first-of-type {
+    transform: translateY(-20px);
     opacity: 0; 
-} 
+}
 
-input:checked  ~  .container-bar .bar:nth-child(2) {
+input:checked  ~ .bar:nth-of-type(2) {
     transform: rotate(-45deg);
 }
 
-input:checked  ~  .container-bar .bar:last-child {
-    transform: rotate(45deg);
+input:checked ~ .bar:last-of-type {
+    transform: rotate(45deg) translateY(-35px) translateX(-31px);
+}
+input:checked:hover ~ .bar:first-of-type {
+    filter: brightness(30%);
+    box-shadow: 2px 1px 1px 0px rgba(106,177,186,1);
+}
+input:checked:hover + .bar:last-of-type {
+    filter: brightness(50%);
+    box-shadow: 2px 1px 1px 0px rgba(106,177,186,1);
 }
 
+/*SWING ANIMATION*/
 .container-block-swing {
     display: flex;
 }
