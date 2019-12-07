@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background-color: lavender;
 }
 
 input {
@@ -68,10 +69,12 @@ input:checked ~ .bar:last-of-type {
     transform: rotate(45deg) translateY(-35px) translateX(-31px);
 }
 input:checked:hover ~ .bar:nth-of-type(2) {
-    border-bottom: 2px solid yellow;
+    border-bottom: 2px solid  #ddf1da;
+    box-shadow: 4px 0 6px 1px #53e444;
 }
 input:checked:hover ~ .bar:last-of-type {
-    border-bottom: 2px solid yellow;
+    border-bottom: #e9b8b9;
+	box-shadow: 4px 0 6px 1px #c22f31;
 }
 
 /*SWING ANIMATION*/
