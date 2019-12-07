@@ -15,6 +15,7 @@ input {
  }
 
  .bar {
+     position: relative;
      display: block;
      width: 100px;
      height: 3px; 
@@ -25,6 +26,30 @@ input {
     margin-bottom: 45px; 
 }
 
+.bar:first-of-type:before,
+.bar:last-of-type:before {
+    display: inline-block;
+    content: " ";
+    width: 10px;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 10%;
+ 
+}
+
+.bar:nth-of-type(2):after {
+    display: inline-block;
+    content: " ";
+    width: 10px;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    right: 10%;
+   
+}
  .input:checked,
  .bar {
      transition-duration: 2s;
@@ -42,13 +67,11 @@ input:checked  ~ .bar:nth-of-type(2) {
 input:checked ~ .bar:last-of-type {
     transform: rotate(45deg) translateY(-35px) translateX(-31px);
 }
-input:checked:hover ~ .bar:first-of-type {
-    filter: brightness(30%);
-    box-shadow: 2px 1px 1px 0px rgba(106,177,186,1);
+input:checked:hover ~ .bar:nth-of-type(2) {
+    border-bottom: 2px solid yellow;
 }
-input:checked:hover + .bar:last-of-type {
-    filter: brightness(50%);
-    box-shadow: 2px 1px 1px 0px rgba(106,177,186,1);
+input:checked:hover ~ .bar:last-of-type {
+    border-bottom: 2px solid yellow;
 }
 
 /*SWING ANIMATION*/
