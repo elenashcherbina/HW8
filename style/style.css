@@ -20,7 +20,7 @@ input {
      height: 3px; 
      border-bottom: 2px solid darkgray;
  }
- 
+
 .bar:not(:last-child) {
     margin-bottom: 45px; 
 }
@@ -30,15 +30,15 @@ input {
      transition-duration: 2s;
  }
 
-input:checked + .container-bar .bar:first-child {
+input:checked  ~  .container-bar .bar:first-child {
     opacity: 0; 
 } 
 
-input:checked + .container-bar .bar:nth-child(2) {
+input:checked  ~  .container-bar .bar:nth-child(2) {
     transform: rotate(-45deg);
 }
 
-input:checked + .container-bar .bar:last-child {
+input:checked  ~  .container-bar .bar:last-child {
     transform: rotate(45deg);
 }
 
